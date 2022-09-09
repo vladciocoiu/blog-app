@@ -1,0 +1,24 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run devstart",
+    "client": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladciocoiu/blog-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladciocoiu/blog-app/issues"
+  },
+  "homepage": "https://github.com/vladciocoiu/blog-app#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
