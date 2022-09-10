@@ -6,6 +6,9 @@ const logger = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
 
+// get db connection
+const db = require('./src/config/dbConfig');
+
 const app = express();
 
 app.use(logger('dev'));
@@ -16,11 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 app.use(helmet());
 
+const postRouter = require('./src/routes/postRoutes');
+app.use('/api/posts', postRouter);
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
+
 
 // error handler
 app.use((err, req, res, next) => {
@@ -30,7 +32,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json('error');
 });
 
 module.exports = app;
