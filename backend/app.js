@@ -1,10 +1,11 @@
-const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
+
+// load .env file
+require('dotenv').config();
 
 // get db connection
 const db = require('./src/config/dbConfig');

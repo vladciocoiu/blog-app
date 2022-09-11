@@ -1,9 +1,5 @@
-const express = require('express');
-const postModel = require('../models/postModel');
 const commentModel = require('../models/commentModel');
-const mongoose = require('mongoose');
 
-const app = express();
 
 // get all comments for a single post
 exports.getComments = async(req, res) => {
