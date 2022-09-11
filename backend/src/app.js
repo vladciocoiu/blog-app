@@ -8,7 +8,7 @@ const helmet = require('helmet');
 require('dotenv').config();
 
 // get db connection
-const db = require('./src/config/dbConfig');
+const db = require('./config/dbConfig');
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(compression());
 app.use(helmet());
 
 // import and use routes
-const apiRouter = require('./src/routes/index');
+const apiRouter = require('./routes/index');
 app.use('/api', apiRouter);
 
 module.exports = app;
