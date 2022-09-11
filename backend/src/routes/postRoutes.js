@@ -5,7 +5,9 @@ const postController = require('../controllers/postController');
 
 router.get('/', postController.getPosts);
 router.post('/', postController.createPost);
-router.put('/:postId', postController.editPost)
-router.delete('/:postId', postController.deletePost)
+
+router.get('/:postId', postController.getSinglePost);
+router.put('/:postId', postController.editPost);
+router.delete('/:postId', postController.deletePost);
 
 module.exports = router;

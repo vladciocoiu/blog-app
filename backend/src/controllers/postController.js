@@ -14,6 +14,16 @@ exports.getPosts = async(req, res) => {
     res.json(posts);
 };
 
+exports.getSinglePost = async(req, res) => {
+    const { postId } = req.params;
+
+    const post = await postModel.findById(postId).lean();
+
+    if (!post) return res.status(404).json({ error: 'Post not found.' });
+
+    res.json(post);
+}
+
 
 exports.createPost = async(req, res) => {
     // get title and text from request body
@@ -27,7 +37,7 @@ exports.createPost = async(req, res) => {
         await newPost.save();
 
         // send the newly created post back to the client
-        res.json({ newPost });
+        res.json(newPost);
 
     } catch (err) {
         // send the error if any
@@ -38,16 +48,15 @@ exports.createPost = async(req, res) => {
 exports.editPost = async(req, res) => {
     // get title, text, and postId from request
     const { title, text } = req.body;
-    const postId = req.params['postId'];
-    console.log(postId);
+    const { postId } = req.params;
 
     try {
         const post = await postModel.findById(postId);
 
         // if no post found, return 404
-        if (!post) return res.status(404).json({ message: 'Error: Post not found.' });
+        if (!post) return res.status(404).json({ error: 'Post not found.' });
         
-        // update and save
+        // update 
         post.title = title;
         post.text = text;
 
@@ -59,11 +68,11 @@ exports.editPost = async(req, res) => {
         // return error if any
         res.status(400).json(err); 
     }
-}
+};
 
 exports.deletePost = async(req, res) => {
     // get postId from request
-    const postId = req.params['postId'];
+    const { postId } = req.params;
 
     try {
         await postModel.deleteOne({ _id: postId });
@@ -74,4 +83,4 @@ exports.deletePost = async(req, res) => {
     } catch (err) {
         res.status(404).json(err);
     }
-}
+};
