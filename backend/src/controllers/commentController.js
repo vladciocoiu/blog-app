@@ -20,12 +20,12 @@ exports.getComments = async(req, res) => {
 exports.createComment = async(req, res) => {
     // get all needed info from request
     const { postId } = req.params;
-    const { authorName, text } = req.body;
+    const { text } = req.body;
+    const { userId } = req.user;
 
     try {
-        console.log(req.params);
         // create comment
-        const newComment = new commentModel({ authorName, text, postId });
+        const newComment = new commentModel({ author: userId, text, postId });
 
         // save comment in db
         await newComment.save();

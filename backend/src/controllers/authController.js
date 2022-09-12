@@ -7,7 +7,6 @@ exports.register = async(req, res) => {
 
     // get info from req body
     const { name, email, password } = req.body;
-    console.log(password);
 
     // hash password
     const hash = await bcrypt.hash(password, 10);
@@ -40,7 +39,7 @@ exports.login = async(req, res) => {
 
 
     // generate signed json web token
-    const token = jwt.sign({ user: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
     // add token to response header
     res.header('authentication', 'Bearer ' + token);

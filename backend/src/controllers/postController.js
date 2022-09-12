@@ -1,4 +1,5 @@
 const postModel = require('../models/postModel');
+const commentModel = require('../models/commentModel');
 
 
 exports.getPosts = async(req, res) => {
@@ -25,9 +26,12 @@ exports.createPost = async(req, res) => {
     // get title and text from request body
     const { title, text } = req.body;
 
+    // get user
+    const { userId } = req.user;
+
     try {
         // create new post
-        const newPost = new postModel({ title, text });
+        const newPost = new postModel({ title, text, author: userId });
         
         // save post
         await newPost.save();
@@ -71,7 +75,12 @@ exports.deletePost = async(req, res) => {
     const { postId } = req.params;
 
     try {
+        // delete all comments of that post
+        await commentModel.deleteMany({ postId });
+
+        // delete post
         await postModel.deleteOne({ _id: postId });
+        
         
         // return 204: no content
         return res.status(204).json({});
