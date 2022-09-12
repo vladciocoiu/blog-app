@@ -47,7 +47,7 @@ exports.createPost = async(req, res) => {
 
 exports.editPost = async(req, res) => {
     // get title, text, and postId from request
-    const { title, text } = req.body;
+    const { title, text, isPublished } = req.body;
     const { postId } = req.params;
 
     try {
@@ -59,6 +59,7 @@ exports.editPost = async(req, res) => {
         // update 
         post.title = title;
         post.text = text;
+        post.isPublished = isPublished;
 
         // return the updated post
         const updatedPost = await post.save();
