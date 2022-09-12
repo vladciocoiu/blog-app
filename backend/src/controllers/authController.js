@@ -40,10 +40,10 @@ exports.login = async(req, res) => {
 
 
     // generate signed json web token
-    const token = jwt.sign({ _id: user._id, email: user.email }, process.env.JWT_SECRET);
+    const token = jwt.sign({ user: user._id }, process.env.JWT_SECRET);
 
     // add token to response header
-    res.header('auth_token', token);
+    res.header('authentication', 'Bearer ' + token);
 
     res.json({ token });
 };
