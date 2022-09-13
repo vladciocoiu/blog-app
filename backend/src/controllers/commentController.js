@@ -13,7 +13,7 @@ exports.getComments = async(req, res) => {
         return res.json(comments);
 
     } catch(err) {
-        res.status(400).json(err);
+        res.status(400).json({ error: err });
     }
 };
 
@@ -34,7 +34,7 @@ exports.createComment = async(req, res) => {
         return res.json(newComment);
 
     } catch (err) {
-        return res.status(400).json(err);
+        return res.status(400).json({ error: err });
     }
 }
 
@@ -60,7 +60,7 @@ exports.editComment = async(req, res) => {
         return res.json(updatedComment);
 
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json({ error: err });
     }
 }
 
@@ -75,7 +75,7 @@ exports.deleteComment = async(req, res) => {
         return res.status(204).json({});
 
     } catch(err) {
-        return res.status(404).json(err);
+        return res.status(400).json({ error: err });
     }
 }
 

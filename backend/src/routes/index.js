@@ -8,6 +8,6 @@ const router = express.Router({ mergeParams: true });
 
 router.use('/posts', postRouter);
 router.use('/posts/:postId/comments', commentRouter);
-router.use('/user', authRouter);
+router.use('/users', authRouter);
 
 module.exports = router;

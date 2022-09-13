@@ -41,7 +41,7 @@ exports.createPost = async(req, res) => {
 
     } catch (err) {
         // send the error if any
-        res.status(400).json(err);
+        res.status(400).json({ error: err });
     }
 };
 
@@ -67,7 +67,7 @@ exports.editPost = async(req, res) => {
 
     } catch (err) {
         // return error if any
-        res.status(400).json(err); 
+        res.status(400).json({ error: err }); 
     }
 };
 
@@ -87,6 +87,6 @@ exports.deletePost = async(req, res) => {
         return res.status(204).json({});
 
     } catch (err) {
-        res.status(404).json(err);
+        res.status(400).json({ error: err });
     }
 };
