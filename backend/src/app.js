@@ -3,6 +3,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
+const cors = require('cors')
+
 
 // load .env file
 require('dotenv').config();
@@ -18,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(compression());
 app.use(helmet());
+app.use(cors())
 
 // import and use routes
 const apiRouter = require('./routes/index');
