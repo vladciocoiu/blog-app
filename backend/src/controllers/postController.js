@@ -1,11 +1,20 @@
 const postModel = require('../models/postModel');
 const commentModel = require('../models/commentModel');
+const userModel = require('../models/userModel');
+
 
 
 exports.getPosts = async(req, res) => {
 
     // get all posts from db
     const posts = await postModel.find({}).lean();
+
+    // replace user id's with their names
+    for(let post of posts) {
+        const authorId = post.author;
+        const author = await userModel.findById(authorId);
+        post.author = author.name;
+    }
 
     // return in json format
     res.json(posts);
@@ -17,6 +26,11 @@ exports.getSinglePost = async(req, res) => {
     const post = await postModel.findById(postId).lean();
 
     if (!post) return res.status(404).json({ error: 'Post not found.' });
+
+    // replace user id with their name
+    const authorId = post.author;
+    const author = await userModel.findById(authorId);
+    post.author = author.name;
 
     res.json(post);
 }
