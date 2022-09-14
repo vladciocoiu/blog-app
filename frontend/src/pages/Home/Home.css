@@ -1,0 +1,32 @@
+.posts-container {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px;
+}
+
+.post-card {
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 2px 2px 15px -2px #17252abf;
+          box-shadow: 2px 2px 15px -2px #17252abf;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  width: 200px;
+}
+
+.post-card .post-title {
+  text-align: center;
+}
+
+.post-card:hover {
+  -webkit-box-shadow: 2px 2px 25px -6px #17252abf;
+          box-shadow: 2px 2px 25px -6px #17252abf;
+  scale: 1.02;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Home.css.map */
