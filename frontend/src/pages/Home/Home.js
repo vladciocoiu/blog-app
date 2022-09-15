@@ -12,7 +12,6 @@ export default function Home() {
     useEffect(() => {
         const getPosts = async () => setPosts(await getAllPosts());
         getPosts();
-        console.log(posts);
     }, []);
 
 

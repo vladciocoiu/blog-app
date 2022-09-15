@@ -7,7 +7,7 @@ export default async function getAllPosts () {
         const data = await response.json();
 
         // handle unsuccessful requests
-        if(response.status != 200) {
+        if(response.status !== 200) {
             console.log('Error while fetching data: ', data.error);
             return;
         }

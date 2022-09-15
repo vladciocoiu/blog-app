@@ -1,3 +1,8 @@
+:root {
+  --green: #2BAE66FF;
+  --white: #FCF6F5FF;
+}
+
 .posts-container {
   width: 80vw;
   display: -webkit-box;
@@ -10,10 +15,10 @@
 }
 
 .post-card {
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 20px;
-  -webkit-box-shadow: 2px 2px 15px -2px #17252abf;
-          box-shadow: 2px 2px 15px -2px #17252abf;
+  -webkit-box-shadow: 2px 2px 10px -1px #17252abf;
+          box-shadow: 2px 2px 10px -1px #17252abf;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   width: 200px;
@@ -24,9 +29,6 @@
 }
 
 .post-card:hover {
-  -webkit-box-shadow: 2px 2px 25px -6px #17252abf;
-          box-shadow: 2px 2px 25px -6px #17252abf;
-  scale: 1.02;
   cursor: pointer;
 }
 /*# sourceMappingURL=Home.css.map */
