@@ -1,0 +1,162 @@
+:root {
+  --green: #2BAE66FF;
+  --white: #FCF6F5FF;
+}
+
+.single-post {
+  width: 60vw;
+  min-height: calc(100vh - 70px);
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 20vw;
+  background-color: var(--white);
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". . . . ." ". t t t ." ". d d d ." "tx tx tx tx tx" "c c c c c" ". . . . .";
+  -ms-grid-rows: 100px 100px 200px auto auto;
+      grid-template-rows: 100px 100px 200px auto auto;
+}
+
+.single-post .post-details {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.single-post .post-time, .single-post .post-date, .single-post .post-author {
+  color: #646464;
+  font-size: 16px;
+}
+
+.single-post .post-author {
+  margin-right: 15px;
+}
+
+.single-post .post-title {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: t;
+  font-size: 32px;
+  text-align: center;
+}
+
+.single-post .post-text {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: tx;
+  font-size: 18px;
+  margin: 0 50px;
+}
+
+.single-post .comment-section {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: c;
+  margin: 200px 0;
+}
+
+.single-post .comment-section .comment-heading {
+  margin: 0;
+  padding-left: 60px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+}
+
+.single-post .comment-section .comment-heading:after {
+  position: absolute;
+  bottom: -5px;
+  left: 3%;
+  content: "";
+  background-color: #aaaaaa;
+  height: 1px;
+  width: 94%;
+}
+
+.single-post .comment-section .post-comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.single-post .comment-section .post-comments .comment {
+  padding: 20px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.single-post .comment-section .post-comments .comment .comment-author {
+  padding-left: 20px;
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.single-post .comment-section .post-comments .comment .comment-date {
+  padding-left: 20px;
+  color: #646464;
+  font-size: 14px;
+  margin: 0;
+}
+
+.single-post .comment-section .post-comments .comment .comment-text {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.single-post .comment-section .post-comments .comment:after {
+  position: absolute;
+  bottom: -10px;
+  left: 3%;
+  content: "";
+  background-color: #aaaaaa;
+  height: 1px;
+  width: 94%;
+}
+
+.single-post:before, .single-post:after {
+  content: " ";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.single-post:before {
+  -webkit-box-shadow: -15px 0 20px -25px inset;
+          box-shadow: -15px 0 20px -25px inset;
+  left: -15px;
+}
+
+.single-post:after {
+  -webkit-box-shadow: 15px 0 20px -25px inset;
+          box-shadow: 15px 0 20px -25px inset;
+  right: -15px;
+}
+/*# sourceMappingURL=SinglePost.css.map */

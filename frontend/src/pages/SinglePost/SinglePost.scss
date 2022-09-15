@@ -1,0 +1,122 @@
+:root {
+    --green: #2BAE66FF; 
+    --white: #FCF6F5FF;
+}
+
+.single-post {
+    width: 60vw;
+    min-height: calc(100vh - 70px);
+    position: absolute;
+    z-index: -1;
+    top: 70px;
+    left: 20vw;
+    background-color: var(--white);
+    display: grid;
+    grid-template-areas: ". . . . ."
+    ". t t t ."
+    ". d d d ."
+    "tx tx tx tx tx"
+    "c c c c c"
+    ". . . . .";
+    grid-template-rows: 100px 100px 200px auto auto;
+    .post-details {
+        grid-area: d;
+        display: flex;
+        gap: 5px;
+        text-align: center;
+        justify-content: center;
+    }
+    .post-time, .post-date, .post-author {
+        color: rgb(100, 100, 100);
+        font-size: 16px;
+    }
+    .post-author {
+        margin-right: 15px;
+    }
+    .post-title {
+        grid-area: t;
+        font-size: 32px;
+        text-align: center;
+    }
+    .post-text {
+        grid-area: tx;
+        font-size: 18px;
+        margin: 0 50px;
+    }
+    .comment-section {
+        grid-area: c;
+        margin: 200px 0;
+        .comment-heading {
+            margin: 0;
+            padding-left: 60px;
+            margin-bottom: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            position: relative;
+
+        }
+        .comment-heading:after {
+            position: absolute;
+            bottom: -5px;
+            left: 3%;
+            content: "";
+            background-color: rgb(170, 170, 170);
+            height: 1px;
+            width: 94%;
+        }
+        .post-comments {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .comment {
+                padding: 20px 40px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                .comment-author {
+                    padding-left: 20px;
+                    font-size: 18px;
+                    margin: 0;
+                    margin-bottom: 2px;
+                }
+                .comment-date {
+                    padding-left: 20px;
+                    color: rgb(100, 100, 100);
+                    font-size: 14px;
+                    margin: 0;
+                }
+                .comment-text {
+                    font-size: 16px;
+                    margin: 0;
+                    margin-top: 20px;
+                }
+            }
+            .comment:after {
+                position: absolute;
+                bottom: -10px;
+                left: 3%;
+                content: "";
+                background-color: rgb(170, 170, 170);
+                height: 1px;
+                width: 94%;
+            }
+        }
+    }
+}
+
+.single-post:before, .single-post:after {
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+
+.single-post:before {
+    box-shadow: -15px 0 20px -25px inset;
+    left: -15px;
+}
+.single-post:after {
+    box-shadow: 15px 0 20px -25px inset;
+    right: -15px;
+}
