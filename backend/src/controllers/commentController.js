@@ -1,4 +1,5 @@
 const commentModel = require('../models/commentModel');
+const userModel = require('../models/userModel');
 
 
 // get all comments for a single post
@@ -8,6 +9,13 @@ exports.getComments = async(req, res) => {
     try {
         // get comments from db based on postId
         const comments = await commentModel.find({ postId }).lean();
+
+        // replace user id's with their names
+        for(let comment of comments) {
+            const authorId = comment.author;
+            const author = await userModel.findById(authorId);
+            comment.author = author.name;
+        }
 
         // return them in json
         return res.json(comments);
