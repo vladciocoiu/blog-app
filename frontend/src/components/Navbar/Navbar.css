@@ -16,9 +16,29 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+}
+
+nav .nav-link-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+}
+
+nav h3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
 }
 
 .nav-title {
@@ -32,17 +52,17 @@ nav {
   cursor: default;
 }
 
-.nav-home-link {
+.nav-link {
   text-decoration: none;
 }
 
-.nav-home-link h4 {
+.nav-link h4 {
   font-size: 20px;
   color: var(--white);
   position: relative;
 }
 
-.nav-home-link h4:after {
+.nav-link h4:after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -54,7 +74,7 @@ nav {
   transition: 0.2s ease-in-out;
 }
 
-.nav-home-link h4:hover:after {
+.nav-link h4:hover:after {
   width: 100%;
 }
 /*# sourceMappingURL=Navbar.css.map */
