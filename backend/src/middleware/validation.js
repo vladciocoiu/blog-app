@@ -5,13 +5,15 @@ const registerSchema = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().min(3).required().email(),
     password: Joi.string().min(6).required(),
-    confirmPassword: Joi.ref('password')
+    confirmPassword: Joi.valid(Joi.ref('password')).messages({
+        'any.only': 'The 2 passwords do not match.' 
+    })
 });
 
 // validation schema for login form
 const loginSchema = Joi.object({
     email: Joi.string().min(3).required().email(),
-    password: Joi.string().min(6)
+    password: Joi.string().min(6).required()
 });
 
 // validation middleware function for login
