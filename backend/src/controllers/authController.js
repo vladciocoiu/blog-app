@@ -55,7 +55,7 @@ exports.login = async(req, res) => {
     // add token to response header
     res.header('authentication', 'Bearer ' + accessToken);
 
-    res.json({ accessToken, refreshToken });
+    res.json({ accessToken, refreshToken, userName: user.name, userIsAdmin: user.isAdmin });
 };
 
 
