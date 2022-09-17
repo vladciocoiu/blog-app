@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./RegisterPage.css";
 import RegisterRequest from "./RegisterRequest.js";
@@ -47,5 +47,6 @@ export default function RegisterPage () {
             <input className="confirm-password-input" type="password" placeholder="Confirm Password" name="confirm-password" onChange={e => handleInputChange(setConfirmPasswordText, e)} />
             <input className="submit" type="submit" value="Register" />
         </form>
+        <Link className="login-link" to="/login">Already have an account? Log In.</Link>
     </main>);
 };

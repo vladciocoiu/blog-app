@@ -24,6 +24,7 @@
         align-items: center;
     }
     .email-input, .password-input {
+        font-size: 16px;
         border-radius: 5px;
         margin: 2px;
         border: none;
@@ -33,9 +34,8 @@
     }
 
     .submit {
-        width: 100px;
-        height: 30px;
-        font-size: 14px;
+        font-size: 18px;
+        padding: 10px 30px;
         margin: 20px 0;
         background-color: var(--green);
         border: 1px solid black;
@@ -45,5 +45,10 @@
     }
     .submit:hover {
         cursor: pointer;
+    }
+    .register-link {
+        text-decoration: none;
+        font-size: 17px;
+        margin-top: 10px;
     }
 }

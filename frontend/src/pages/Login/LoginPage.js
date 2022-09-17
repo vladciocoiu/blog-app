@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./LoginPage.css";
 import LoginRequest from "./LoginRequest";
@@ -43,5 +43,6 @@ export default function LoginPage () {
             <input className="password-input" type="password" placeholder="Password" name="password" onChange={e => handleInputChange(setPasswordText, e)} />
             <input className="submit" type="submit" value="Log In" />
         </form>
+        <Link className="register-link" to="/register">{'Don\'t have an account? Register.'}</Link>
     </main>);
 };
