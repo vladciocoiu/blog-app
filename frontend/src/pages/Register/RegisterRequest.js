@@ -5,7 +5,6 @@ export default async function RegisterRequest (name, email, password, confirmPas
     const requestOptions = {
         headers: {
             'Content-Type': 'application/json',
-            // 'Access-Control-Allow-Origin': '*'
         },
     }
 
