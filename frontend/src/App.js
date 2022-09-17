@@ -6,18 +6,23 @@ import Navbar from "./components/Navbar/Navbar";
 import SinglePost from "./pages/SinglePost/SinglePost";
 import LoginPage from "./pages/Login/LoginPage";
 import RegisterPage from "./pages/Register/RegisterPage";
+import CreatePostPage from "./pages/CreatePost/CreatePostPage";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
   return (
-    <>
+    <main className="app">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts/:postId" element={<SinglePost />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/create-post" element={<CreatePostPage />} />
+        </Route>
       </Routes>
-    </>
+    </main>
   );
 }
 
