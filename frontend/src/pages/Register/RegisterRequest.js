@@ -1,14 +1,14 @@
+import axios from "axios";
+
 export default async function RegisterRequest (name, email, password, confirmPassword) {
-    const responseBody = { name, email, password, confirmPassword };
+    const requestBody = { name, email, password, confirmPassword };
     const requestOptions = {
-        method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': '*'
         },
-        body: JSON.stringify(responseBody),
     }
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/users/register`, requestOptions);
-    const data = await response.json();
-    return data;
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, JSON.stringify(requestBody), requestOptions);
+    return response.data;
 };

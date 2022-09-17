@@ -27,14 +27,17 @@ export default function RegisterPage () {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const data = await RegisterRequest(nameText, emailText, passwordText, confirmPasswordText);
-        console.log(data);
+        try {
+            const data = await RegisterRequest(nameText, emailText, passwordText, confirmPasswordText);
 
-        // display error if any
-        if(data.error) setError(data.error);
+            // redirect user to login page if register was successful
+            navigate('/login');
 
-        // redirect user to login page if register was successful
-        else navigate('/login');
+        // if error just display it
+        } catch (err) {
+            setError(err.response.data.error);
+            console.log(err);
+        }
     }
 
     return (<main className="register-main">

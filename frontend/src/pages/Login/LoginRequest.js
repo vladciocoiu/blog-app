@@ -1,14 +1,15 @@
+import axios from "axios";
+
 export default async function LoginRequest (email, password) {
-    const responseBody = { email, password };
+    const requestBody = { email, password };
     const requestOptions = {
-        method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': '*'
         },
-        body: JSON.stringify(responseBody),
+        // withCredentials: true
     }
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, requestOptions);
-    const data = await response.json();
-    return data;
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, JSON.stringify(requestBody), requestOptions);
+    return response.data;
 };

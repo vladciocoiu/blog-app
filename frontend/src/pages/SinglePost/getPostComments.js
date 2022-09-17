@@ -1,19 +1,13 @@
+import axios from "axios";
+
 export default async function getPostComments (postId) {
     try {
-        // fetch data from api
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`);
+        // get data from api and return it
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`);
 
-        // convert data to object
-        const data = await response.json();
+        return response.data;
 
-        // handle unsuccessful requests
-        if(response.status !== 200) {
-            console.log('Error while fetching data: ', data.error);
-            return;
-        }
-
-        return data;
-
+    // handle errors
     } catch (err) {
         console.log(err);
     }
