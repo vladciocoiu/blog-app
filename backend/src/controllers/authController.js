@@ -55,19 +55,26 @@ exports.login = async(req, res) => {
     // add token to response header
     res.header('authentication', 'Bearer ' + accessToken);
 
-    res.json({ accessToken, refreshToken, userName: user.name, userIsAdmin: user.isAdmin });
+    // add refresh token to cookie
+    if (req.cookies['refreshToken']) res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'None', secure: true });
+    res.cookie('refreshToken', refreshToken, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 30 });
+
+    res.json({ accessToken, userName: user.name, userIsAdmin: user.isAdmin });
 };
 
 
 // get new access token using a refresh token
 // also rotate refresh token by removing it from db and creating a new one
 exports.getAccessToken = async (req, res) => {
-
-    // get refresh token from req body
-    const { token } = req.body;
+    // get refresh token from cookie
+    const token = req.cookies['refreshToken'];
 
     // no refresh token
     if (!token) return res.status(401).json({ error: 'No refresh token provided.' });
+
+    // clear cookie
+    res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'None', secure: true });
+
 
     // hash the token and try to find it in db
     const hash = hashToken(token);
@@ -92,21 +99,27 @@ exports.getAccessToken = async (req, res) => {
         // add token to response header
         res.header('authentication', 'Bearer ' + accessToken);
 
-        res.json({ accessToken, refreshToken: newRefreshToken });
+        // add new cookie
+        res.cookie('refreshToken', newRefreshToken, { httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 30 });
+
+        res.json({ accessToken });
 
     } catch (err) {
         return res.status(403).json({ error: 'Invalid refresh token.' });
     }
 };
 
-// logout by deleting the refresh token in req body
+// logout by deleting the refresh token
 exports.logout = async (req, res) => {
-    const { token } = req.body;
+    const token = req.cookies['refreshToken'];
+
+    if (!token) return res.status(204).json({});
 
     try {
+        res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'None', secure: true });
+
         const hash = hashToken(token);
         const deleted = await refreshTokenModel.deleteOne({ hash });
-        console.log(deleted);
 
         return res.status(204).json({});
 
