@@ -14,7 +14,6 @@ export default function Home() {
         getPosts();
     }, []);
 
-
     return (
         <div className="posts-container">
             {posts.map(post => <PostCard key={post._id} post={post} />)}

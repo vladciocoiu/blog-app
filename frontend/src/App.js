@@ -8,18 +8,21 @@ import LoginPage from "./pages/Login/LoginPage";
 import RegisterPage from "./pages/Register/RegisterPage";
 import CreatePostPage from "./pages/CreatePost/CreatePostPage";
 import RequireAuth from "./components/RequireAuth";
+import PersistLogin from "./components/PersistLogin";
 
 function App() {
   return (
     <main className="app">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/posts/:postId" element={<SinglePost />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route element={<RequireAuth />}>
-          <Route path="/create-post" element={<CreatePostPage />} />
+        <Route element={<PersistLogin />}> 
+          <Route path="/" element={<Home />} />
+          <Route path="/posts/:postId" element={<SinglePost />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route element={<RequireAuth />}>
+            <Route path="/create-post" element={<CreatePostPage />} />
+          </Route>
         </Route>
       </Routes>
     </main>

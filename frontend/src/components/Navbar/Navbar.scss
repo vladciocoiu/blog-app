@@ -36,8 +36,10 @@ nav {
     cursor: default;
 }
 
-.nav-link {
+.nav-link, .logout-button {
     text-decoration: none;
+    border: none;
+    background: transparent;
 
     h4 {
         font-size: 20px;
@@ -59,4 +61,8 @@ nav {
     h4:hover:after {
         width: 100%;
     }
+}
+
+.logout-button:hover {
+    cursor: pointer;
 }

@@ -5,6 +5,7 @@ import getSinglePost from './getSinglePost';
 import getPostComments from './getPostComments';
 import "./SinglePost.css";
 
+
 export default function SinglePost() {
     const { postId } = useParams();
     const [post, setPost] = useState({});

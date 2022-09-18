@@ -52,17 +52,19 @@ nav h3 {
   cursor: default;
 }
 
-.nav-link {
+.nav-link, .logout-button {
   text-decoration: none;
+  border: none;
+  background: transparent;
 }
 
-.nav-link h4 {
+.nav-link h4, .logout-button h4 {
   font-size: 20px;
   color: var(--white);
   position: relative;
 }
 
-.nav-link h4:after {
+.nav-link h4:after, .logout-button h4:after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -74,7 +76,11 @@ nav h3 {
   transition: 0.2s ease-in-out;
 }
 
-.nav-link h4:hover:after {
+.nav-link h4:hover:after, .logout-button h4:hover:after {
   width: 100%;
+}
+
+.logout-button:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=Navbar.css.map */
