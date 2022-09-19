@@ -8,7 +8,7 @@ export default function RequireAuth () {
     const { auth } = useContext(AuthContext);
 
     return (
-        auth?.userName
+        auth?.accessToken
         ? <Outlet />
         : <Navigate to="/login" />
     );

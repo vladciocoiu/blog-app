@@ -15,10 +15,8 @@ export default function useRefreshToken () {
             // get new tokens
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/token`, {}, { withCredentials: true });
 
-            // change tokens with the new ones
-            setAuth(prev => { 
-                return {...prev, accessToken: response.data.accessToken, isAdmin: response.data.isAdmin }
-            });
+            // change token with the new one
+            setAuth({ userIsAdmin: response.data.userIsAdmin, accessToken: response.data.accessToken });
 
             return response.data.accessToken;
 
