@@ -55,6 +55,10 @@ export default function SinglePost() {
                         <p className='comment-text'>{ comment.text }</p>
                     </div>)}
                 </div>
+                <form className="add-comment-form">
+                    <textarea className="add-comment" placeholder="Add a comment..." name="add-comment" autoComplete='off' required />
+                    <button className="post-comment-button">Post</button>
+                </form>
             </section>
         </main>
     );

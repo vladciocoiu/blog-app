@@ -1,0 +1,55 @@
+.create-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    h2 {
+        margin-bottom: 50px;
+    }
+}
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input, textarea {
+        font-size: 16px;
+        border-radius: 5px;
+        margin: 2px;
+        border: none;
+        background-color: var(--white);
+        padding: 10px;
+        border: 1px solid gray;
+    }
+
+    .submit-button {
+        margin: auto;
+        font-size: 16px;
+        padding: 10px 20px;
+        background: none;
+        transition: 0.2s ease-in-out;
+        color: rgb(100, 100, 100);
+        border: 2px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .submit-button:hover {
+        background-color: var(--green);
+        cursor: pointer;
+        color: var(--white);
+    }
+
+    .text-input {
+        width: 400px;
+        max-height: 400px;
+        height: 20vh;
+    }
+
+    .title-input {
+        width: 150px;
+    }
+}
