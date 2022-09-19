@@ -5,6 +5,22 @@ import getSinglePost from './getSinglePost';
 import getPostComments from './getPostComments';
 import "./SinglePost.css";
 
+const formatDate = (date) => {
+    let diff = Math.floor((new Date() - date) / (1000 * 60));
+    if (diff < 60) return `${diff}m`;
+
+    diff = Math.floor(diff / 60);
+    if (diff < 24) return `${diff}h`;
+
+    diff = Math.floor(diff / 24);
+    if (diff < 30) return `${diff}d`;
+
+    diff = Math.floor(diff / 30);
+    if (diff < 12) return `${diff}mo`;
+
+    diff = Math.floor(diff / 12);
+    return `${diff}y`;
+}
 
 export default function SinglePost() {
     const { postId } = useParams();
@@ -35,7 +51,7 @@ export default function SinglePost() {
                 <div className="post-comments">
                     { comments.map(comment => <div className='comment' key={comment._id}>
                         <p className="comment-author">{ comment.author }</p>
-                        <p className="comment-date">{ new Date(comment.createdAt).toLocaleString() }</p>
+                        <p className="comment-date">{ formatDate(new Date(comment.createdAt)) }</p>
                         <p className='comment-text'>{ comment.text }</p>
                     </div>)}
                 </div>
