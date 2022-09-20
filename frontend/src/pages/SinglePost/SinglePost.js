@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import getSinglePost from './getSinglePost';
 import getPostComments from './getPostComments';
+import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import "./SinglePost.css";
 
 const formatDate = (date) => {
@@ -26,6 +27,10 @@ export default function SinglePost() {
     const { postId } = useParams();
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
+    const [text, setText] = useState('');
+    const [refresh, setRefresh] = useState(true); // state for refreshing the comment list whenever the user posts another one
+    const axiosPrivate = useAxiosPrivate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getPost = async () => setPost(await getSinglePost(postId));
@@ -35,7 +40,14 @@ export default function SinglePost() {
     useEffect(() => {
         const getComments = async () => setComments(await getPostComments(postId));
         getComments();
-    }, []);
+    }, [refresh]);
+
+    const handlePostComment = async e => {
+        e.preventDefault();
+        const response = await axiosPrivate.post(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`, { text });
+        setRefresh(!refresh);
+
+    }
 
     return (
         <main className="single-post">
@@ -55,8 +67,8 @@ export default function SinglePost() {
                         <p className='comment-text'>{ comment.text }</p>
                     </div>)}
                 </div>
-                <form className="add-comment-form">
-                    <textarea className="add-comment" placeholder="Add a comment..." name="add-comment" autoComplete='off' required />
+                <form className="add-comment-form" onSubmit={handlePostComment}>
+                    <textarea className="add-comment" placeholder="Add a comment..." name="add-comment" autoComplete='off' onChange={e => setText(e.target.value)} required />
                     <button className="post-comment-button">Post</button>
                 </form>
             </section>

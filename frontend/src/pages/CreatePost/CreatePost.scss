@@ -32,7 +32,7 @@
         background: none;
         transition: 0.2s ease-in-out;
         color: rgb(100, 100, 100);
-        border: 2px solid rgb(160, 160, 160);
+        border: 1px solid rgb(100, 100, 100);
         border-radius: 10px;
         font-weight: bold;
         margin-top: 20px;
@@ -47,6 +47,8 @@
         width: 400px;
         max-height: 400px;
         height: 20vh;
+        resize: none;
+        font-family: inherit;
     }
 
     .title-input {

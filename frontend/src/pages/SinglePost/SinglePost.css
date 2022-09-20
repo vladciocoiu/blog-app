@@ -183,12 +183,13 @@
 .add-comment {
   font-size: 15px;
   border-radius: 5px;
-  margin: 2px;
   border: none;
   background-color: var(--white);
   padding: 10px;
   border: 1px solid gray;
   width: 500px;
+  resize: none;
+  font-family: inherit;
 }
 
 .post-comment-button {
@@ -200,8 +201,8 @@
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   color: #646464;
-  border: 2px solid #a0a0a0;
-  border-radius: 10px;
+  border: 1px solid #646464;
+  border-radius: 7px;
   font-weight: bold;
 }
 

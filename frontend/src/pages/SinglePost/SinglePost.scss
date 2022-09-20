@@ -134,12 +134,13 @@
 .add-comment {
     font-size: 15px;
     border-radius: 5px;
-    margin: 2px;
     border: none;
     background-color: var(--white);
     padding: 10px;
     border: 1px solid gray;
     width: 500px;
+    resize: none;
+    font-family: inherit;
 }
 
 .post-comment-button {
@@ -150,8 +151,8 @@
     background: none;
     transition: 0.2s ease-in-out;
     color: rgb(100, 100, 100);
-    border: 2px solid rgb(160, 160, 160);
-    border-radius: 10px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 7px;
     font-weight: bold;
 }
 
