@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vladciocoiu/blog-app.git"
+    "url": "git+https://github.com/vladciocoiu/shared-blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vladciocoiu/blog-app/issues"
+    "url": "https://github.com/vladciocoiu/shared-blog/issues"
   },
-  "homepage": "https://github.com/vladciocoiu/blog-app#readme",
+  "homepage": "https://github.com/vladciocoiu/shared-blog#readme",
   "devDependencies": {
     "concurrently": "^7.4.0"
   }
