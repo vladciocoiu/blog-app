@@ -17,7 +17,7 @@ export default function Navbar() {
 
     return (
         <nav>
-            <h3 className="nav-title">Blog App</h3>
+            <h3 className="nav-title">Shared Blog</h3>
             <section className="nav-link-section">
                 <Link className="nav-home-link nav-link" to="/"><h4 >Home</h4></Link>
                 {
