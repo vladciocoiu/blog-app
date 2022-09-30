@@ -5,11 +5,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 10vh;
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 100px);
+  margin-top: 100px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -29,6 +31,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  width: 400px;
 }
 
 .create-post-form input, .create-post-form textarea {
@@ -62,7 +65,6 @@
 }
 
 .create-post-form .text-input {
-  width: 400px;
   max-height: 400px;
   height: 20vh;
   resize: none;
@@ -71,5 +73,15 @@
 
 .create-post-form .title-input {
   width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  .create-post-form {
+    width: 70vw;
+    margin: 0 auto;
+  }
+  .create-post-form .title-input {
+    width: auto;
+  }
 }
 /*# sourceMappingURL=CreatePost.css.map */

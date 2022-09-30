@@ -5,23 +5,17 @@
 }
 
 .single-post {
-    width: 60vw;
-    min-height: calc(100vh - 70px);
+    width: 70vw;
+    min-height: calc(100vh);
     position: absolute;
     z-index: -1;
-    top: 70px;
-    left: 20vw;
+    top: 0;
+    left: 15vw;
     background-color: var(--white);
-    display: grid;
-    grid-template-areas: ". . . . ."
-    ". t t t ."
-    ". d d d ."
-    "tx tx tx tx tx"
-    "c c c c c"
-    ". . . . .";
-    grid-template-rows: 100px 100px 200px auto auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
     .post-details {
-        grid-area: d;
         display: flex;
         gap: 5px;
         text-align: center;
@@ -35,21 +29,20 @@
         margin-right: 15px;
     }
     .post-title {
-        grid-area: t;
         font-size: 32px;
         text-align: center;
     }
     .post-text {
-        grid-area: tx;
         font-size: 18px;
-        margin: 0 50px;
+        margin: 0 100px;
+        margin-top: 100px;
     }
     .comment-section {
-        grid-area: c;
-        margin: 200px 0;
+        margin: 100px 0;
+        width: 100%;
         .comment-heading {
             margin: 0;
-            margin-left: 60px;
+            margin-left: 100px;
             margin-bottom: 10px;
             font-size: 17px;
             font-weight: 600;
@@ -126,10 +119,10 @@
 .add-comment-form {
     display: flex;
     gap: 20px;
-    height: 50px;
+    height: 60px;
     padding: 0 30px;
     margin-top: 70px;
-    width: fit-content;
+    justify-content: center;;
 }
 .add-comment {
     font-size: 15px;
@@ -138,14 +131,15 @@
     background-color: var(--white);
     padding: 10px;
     border: 1px solid gray;
+    height: 38px;
     width: 500px;
     resize: none;
     font-family: inherit;
+    margin: 0;
 }
 
 .post-comment-button {
-    height: 50px;
-    margin: auto;
+    height: 60px;
     font-size: 16px;
     padding: 10px 20px;
     background: none;
@@ -160,4 +154,122 @@
     background-color: var(--green);
     cursor: pointer;
     color: var(--white);
+}
+
+@media screen and (max-width: 1200px) {
+    .single-post {
+        .post-title {
+            font-size: 30px;
+        }
+        .post-time, .post-date, .post-author {
+            font-size: 15px;
+        }
+        .post-text {
+            font-size: 17px;
+        }
+
+        .comment-section .comment-heading {
+            font-size: 16px;
+        }
+        .comment-section .post-comments .comment {
+            .comment-text { 
+                font-size: 15px;
+            }
+            .comment-author {
+                font-size: 17px;
+            }
+
+            .comment-date {
+                font-size: 13px;
+            }
+        }
+        .add-comment {
+            font-size: 14px;
+        }
+        .post-comment-button {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .single-post {
+        width: 100vw;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .single-post {
+        .post-title {
+            font-size: 26px;
+        }
+        .post-time, .post-date, .post-author {
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 15px;
+        }
+
+
+        .comment-section .comment-heading {
+            font-size: 14px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .comment-section .post-comments .comment {
+            .comment-text { 
+                font-size: 13px;
+            }
+            .comment-author {
+                font-size: 15px;
+            }
+
+            .comment-date {
+                font-size: 11px;
+            }
+        }
+        .add-comment {
+            font-size: 12px;
+            width: calc(100% - 20px);
+        }
+        .post-comment-button {
+            font-size: 13px;
+        }
+        .add-comment-form {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .single-post .post-text {
+        margin: 0 70px;
+        margin-top: 100px;
+    }
+    .single-post .add-comment-form {
+        padding: 70px;
+    }
+   .single-post .post-details {
+        display: grid;
+        grid-template-areas: "a a"
+        "d t";
+        grid-gap: 10px 0;
+        .post-author {
+            grid-area: a;
+            margin: 0;
+        }
+        .post-date {
+            grid-area: d;
+            margin: 0;
+        }
+        .post-time {
+            grid-area: t;
+            margin: 0;
+        }
+    }
+
 }

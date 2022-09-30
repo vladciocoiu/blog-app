@@ -52,3 +52,15 @@
         margin-top: 10px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .login-main {
+        width: 70vw;
+        h2 {
+            font-size: 24px;
+        }
+        .email-input, .password-input, .register-link {
+            font-size: 14px;
+        }
+    }
+}

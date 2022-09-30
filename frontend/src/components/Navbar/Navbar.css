@@ -68,7 +68,7 @@ nav h3 {
   content: "";
   position: absolute;
   bottom: -2px;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
   background-color: var(--white);
@@ -78,9 +78,31 @@ nav h3 {
 
 .nav-link h4:hover:after, .logout-button h4:hover:after {
   width: 100%;
+  left: 0;
 }
 
 .logout-button:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100px;
+  }
+  nav .nav-title {
+    font-size: 22px;
+    height: 22px;
+    margin: 14px 0;
+  }
+  nav .nav-link-section {
+    height: 50px;
+  }
+  nav .nav-link-section h4 {
+    font-size: 18px;
+  }
 }
 /*# sourceMappingURL=Navbar.css.map */

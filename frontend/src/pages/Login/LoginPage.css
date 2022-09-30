@@ -72,4 +72,16 @@
   font-size: 17px;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .login-main {
+    width: 70vw;
+  }
+  .login-main h2 {
+    font-size: 24px;
+  }
+  .login-main .email-input, .login-main .password-input, .login-main .register-link {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=LoginPage.css.map */

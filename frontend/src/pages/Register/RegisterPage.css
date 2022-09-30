@@ -72,4 +72,16 @@
   font-size: 17px;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .register-main {
+    width: 70vw;
+  }
+  .register-main h2 {
+    font-size: 24px;
+  }
+  .register-main .name-input, .register-main .email-input, .register-main .password-input, .register-main .confirm-password-input, .register-main .login-link {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=RegisterPage.css.map */

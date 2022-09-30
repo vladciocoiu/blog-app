@@ -51,7 +51,7 @@ nav {
         content: "";
         position: absolute;
         bottom: -2px;
-        left: 0;
+        left: 50%;
         width: 0;
         height: 2px;
         background-color: var(--white);
@@ -60,9 +60,28 @@ nav {
 
     h4:hover:after {
         width: 100%;
+        left: 0;
     }
 }
 
 .logout-button:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+    nav {
+        flex-direction: column;
+        height: 100px;
+        .nav-title {
+            font-size: 22px;
+            height: 22px;
+            margin: 14px 0;
+        }
+        .nav-link-section {
+            height: 50px;
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
 }

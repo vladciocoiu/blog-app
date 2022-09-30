@@ -1,10 +1,13 @@
 .create-post {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
     width: 100vw;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 100px);
+    margin-top: 100px;
     flex-direction: column;
+
     h2 {
         margin-bottom: 50px;
     }
@@ -14,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 400px;
 
     input, textarea {
         font-size: 16px;
@@ -44,7 +48,6 @@
     }
 
     .text-input {
-        width: 400px;
         max-height: 400px;
         height: 20vh;
         resize: none;
@@ -53,5 +56,15 @@
 
     .title-input {
         width: 150px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .create-post-form {
+        width: 70vw;
+        margin: 0 auto;
+        .title-input {
+            width: auto;
+        }
     }
 }

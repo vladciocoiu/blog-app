@@ -4,14 +4,16 @@
 }
 
 .posts-container {
-    width: 80vw;
+    width: 1080px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    padding: 50px;
+    padding: 10vw;
 }
 
 .post-card {
+    min-height: 160px;
     border-radius: 3px;
     padding: 20px;
     box-shadow: 2px 2px 10px -1px #17252abf;
@@ -24,4 +26,22 @@
 
 .post-card:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: calc(1080px * 10 / 8)) {
+    .posts-container {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: calc(800px * 10 / 8)) {
+    .posts-container {
+        width: 520px;
+    }
+}
+
+@media screen and (max-width: calc(520px * 10 / 8)) {
+    .posts-container {
+        width: 240px;
+    }
 }
