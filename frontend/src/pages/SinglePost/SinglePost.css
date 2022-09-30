@@ -103,7 +103,7 @@
   -ms-grid-columns: fit-content(100%);
       grid-template-columns: fit-content(100%);
   border-bottom-left-radius: 10px;
-  margin: 0 20px;
+  margin: 0 50px;
   border-left: 2px solid gainsboro;
   border-bottom: 2px solid gainsboro;
   position: relative;
@@ -256,6 +256,9 @@
     font-size: 14px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .single-post .comment-section .post-comments .comment {
+    margin: 0 30px;
   }
   .single-post .comment-section .post-comments .comment .comment-text {
     font-size: 13px;
