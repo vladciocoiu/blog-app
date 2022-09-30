@@ -33,9 +33,10 @@
         text-align: center;
     }
     .post-text {
-        font-size: 18px;
+        font-size: 17px;
         margin: 0 100px;
         margin-top: 100px;
+        line-height: 26px;
     }
     .comment-section {
         margin: 100px 0;
@@ -165,7 +166,7 @@
             font-size: 15px;
         }
         .post-text {
-            font-size: 17px;
+            font-size: 16px;
         }
 
         .comment-section .comment-heading {
@@ -208,7 +209,8 @@
             font-size: 13px;
         }
         .post-text {
-            font-size: 15px;
+            font-size: 14px;
+            line-height: 23px;
         }
 
 
@@ -247,11 +249,11 @@
 
 @media screen and (max-width: 500px) {
     .single-post .post-text {
-        margin: 0 70px;
+        margin: 0 50px;
         margin-top: 100px;
     }
     .single-post .add-comment-form {
-        padding: 70px;
+        padding: 50px;
     }
    .single-post .post-details {
         display: grid;
