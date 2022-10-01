@@ -10,7 +10,7 @@ This is a full-stack blog app where every registered user can make posts, and in
 * Protected routes using middleware functions
 * Form validation using ```Joi```
 * Password hashing and salting using ```bcrypt.js```
-* Non-relational database, hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/lp/try4)
+* Non-relational database, hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
 #### Front-end
 * Global state management using React Context
 * Page navigation using React Router
