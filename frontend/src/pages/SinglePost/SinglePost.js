@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 
+import AuthContext from '../../context/AuthProvider';
 import getSinglePost from './getSinglePost';
 import getPostComments from './getPostComments';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
+import { ReactComponent as DeleteIconSVG } from "../../assets/delete-icon.svg"; 
 import "./SinglePost.css";
 
 const formatDate = (date) => {
@@ -31,6 +33,7 @@ export default function SinglePost() {
     const [refresh, setRefresh] = useState(true); // state for refreshing the comment list whenever the user posts another one
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
+    const { auth } = useContext(AuthContext);
 
     useEffect(() => {
         const getPost = async () => setPost(await getSinglePost(postId));
@@ -44,9 +47,32 @@ export default function SinglePost() {
 
     const handlePostComment = async e => {
         e.preventDefault();
-        const response = await axiosPrivate.post(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`, { text });
-        setRefresh(!refresh);
 
+        try {
+            const response = await axiosPrivate.post(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`, { text });
+        } catch (err) {
+            console.log(err);
+        }
+
+        setText('');
+        setRefresh(!refresh);
+    }
+
+
+    const deleteComment = async (e, commentId) => {
+        // stop event bubbling
+        e.stopPropagation();
+
+        // make api request to delete post
+        try {
+            const response = await axiosPrivate.delete(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments/${commentId}`);
+
+        // console log potential errors
+        } catch (err) {
+            console.log(err);
+        }
+
+        setRefresh(!refresh);
     }
 
     return (
@@ -65,10 +91,11 @@ export default function SinglePost() {
                         <p className="comment-author">{ comment.author }</p>
                         <p className="comment-date">{ formatDate(new Date(comment.createdAt)) }</p>
                         <p className='comment-text'>{ comment.text }</p>
+                        { auth.userIsAdmin ? <button className="delete-comment-button" onClick={e => deleteComment(e, comment._id)}><DeleteIconSVG /></button> : ""}
                     </div>)}
                 </div>
                 <form className="add-comment-form" onSubmit={handlePostComment}>
-                    <textarea className="add-comment" placeholder="Add a comment..." name="add-comment" autoComplete='off' onChange={e => setText(e.target.value)} required />
+                    <textarea className="add-comment" placeholder="Add a comment..." name="add-comment" autoComplete='off' value={text} onChange={e => setText(e.target.value)} required />
                     <button className="post-comment-button">Post</button>
                 </form>
             </section>
