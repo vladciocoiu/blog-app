@@ -7,7 +7,7 @@ const verifyToken = require('../middleware/verifyToken');
 const verifyUser = require('../middleware/verifyUser');
 
 router.get('/', postController.getPosts);
-router.post('/', verifyToken, postController.createPost);
+router.post('/', verifyToken, postController.upload, postController.createPost);
 
 router.get('/:postId', postController.getSinglePost);
 

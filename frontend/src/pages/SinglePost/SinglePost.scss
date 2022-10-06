@@ -5,12 +5,12 @@
 }
 
 .single-post {
-    width: 70vw;
+    width: 800px;
+    left: calc((100vw - 800px) / 2);
     min-height: calc(100vh);
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 15vw;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
@@ -31,11 +31,12 @@
     .post-title {
         font-size: 32px;
         text-align: center;
+        margin-bottom: 10px;;
     }
     .post-text {
         white-space: pre-line;
         font-size: 17px;
-        margin: 0 100px;
+        margin: 0;
         margin-top: 100px;
         line-height: 26px;
     }
@@ -44,8 +45,7 @@
         width: 100%;
         .comment-heading {
             margin: 0;
-            margin-left: 100px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-size: 17px;
             font-weight: 600;
             position: relative;
@@ -74,7 +74,7 @@
                 align-items: center;
                 grid-template-columns: fit-content(100%);
                 border-bottom-left-radius: 10px;
-                margin: 0 50px;
+                margin: 0;
                 border-left: 2px solid rgb(220, 220, 220);
                 border-bottom: 2px solid rgb(220, 220, 220);
 
@@ -111,14 +111,10 @@
     width: 15px;
   }
 
-.single-post:before {
-    box-shadow: -15px 0 20px -25px inset;
-    left: -15px;
-}
-.single-post:after {
-    box-shadow: 15px 0 20px -25px inset;
-    right: -15px;
-}
+  .post-img {
+    width: 100%;
+    margin-top: 30px;
+  }
 
 .add-comment-form {
     display: flex;
@@ -217,13 +213,15 @@
 
 @media screen and (max-width: 1000px) {
     .single-post {
-        width: 100vw;
-        left: 0;
+        width: 600px;
+        left: calc((100vw - 600px) / 2);
     }
 }
 
 @media screen and (max-width: 750px) {
     .single-post {
+        width: 80vw;
+        left: calc((100vw - 80vw) / 2);
         .post-title {
             font-size: 26px;
         }
@@ -242,7 +240,7 @@
             margin-right: auto;
         }
         .comment-section .post-comments .comment {
-            margin: 0 30px;
+            margin: 0;
             .comment-text { 
                 font-size: 13px;
             }
@@ -281,7 +279,7 @@
     }
 
     .single-post .post-text {
-        margin: 0 50px;
+        margin: 0;
         margin-top: 100px;
     }
     .single-post .add-comment-form {

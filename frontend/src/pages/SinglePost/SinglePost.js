@@ -83,6 +83,7 @@ export default function SinglePost() {
                 <p className="post-date">{new Date(post.createdAt).toLocaleDateString()}</p>
                 <p className="post-time">{new Date(post.createdAt).toLocaleTimeString()}</p>
             </div>
+            <img className="post-img" src={process.env.REACT_APP_SERVER_URL + post.imagePath} />
             <p className="post-text">{ post.text }</p>
             <section className="comment-section">
                 <h5 className="comment-heading">{ `Comments (${comments.length})` }</h5>

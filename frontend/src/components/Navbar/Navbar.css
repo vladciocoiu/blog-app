@@ -10,6 +10,7 @@ nav {
   left: 0;
   height: 70px;
   background-color: var(--green);
+  z-index: 50;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

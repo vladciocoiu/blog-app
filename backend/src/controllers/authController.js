@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const userModel = require('../models/userModel.js');
 const refreshTokenModel = require('../models/refreshTokenModel');
 
-const generateAccessToken = async (userId) => await jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '10s' });
+const generateAccessToken = async (userId) => await jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '300s' });
 const generateRefreshToken = async (userId) => await jwt.sign({ userId }, process.env.REFRESH_SECRET, { expiresIn: '30d' });
 const hashToken = token => crypto.createHash('sha256').update(token).digest('hex');
 

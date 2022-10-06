@@ -2,6 +2,30 @@ const postModel = require('../models/postModel');
 const commentModel = require('../models/commentModel');
 const userModel = require('../models/userModel');
 
+const path = require('path');
+const multer = require('multer');
+const { createVerify } = require('crypto');
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/uploads/')
+    },
+    filename: (req, file, cb) => {
+        cb(null, 'img-' + Date.now() + path.extname(file.originalname))
+    } 
+});
+
+exports.upload = multer({ 
+    storage,
+    fileFilter: (req, file, cb) => {
+        const ACCEPTED_FILE_TYPES = ['image/jpg', 'image/png', 'image/jpeg'];
+        if(ACCEPTED_FILE_TYPES.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            return cb('File type not allowed.', false);
+        }
+    }    
+}).single('image');
 
 
 exports.getPosts = async(req, res) => {
@@ -14,6 +38,8 @@ exports.getPosts = async(req, res) => {
         const authorId = post.author;
         const author = await userModel.findById(authorId);
         post.author = author.name;
+
+        post.imagePath = '/public/uploads/' + post.imageName;
     }
 
     // return in json format
@@ -32,6 +58,8 @@ exports.getSinglePost = async(req, res) => {
     const author = await userModel.findById(authorId);
     post.author = author.name;
 
+    post.imagePath = '/public/uploads/' + post.imageName;
+
     res.json(post);
 }
 
@@ -45,7 +73,7 @@ exports.createPost = async(req, res) => {
 
     try {
         // create new post
-        const newPost = new postModel({ title, text, author: userId });
+        const newPost = new postModel({ title, text, author: userId, imageName: req.file.filename });
         
         // save post
         await newPost.save();

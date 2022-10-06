@@ -33,8 +33,11 @@ export default function PostCard ({ post }) {
     }
 
     return (<div onClick={handleClick} className="post-card">
-        <h2 className="post-title">{post.title}</h2>
-        <p className="post-author">{`by ${post.author}`}</p>
+        <img className="home-post-img" src={process.env.REACT_APP_SERVER_URL + post.imagePath} />
+        <div className="post-author-details-wrapper">
+            <h2 className="post-title">{post.title}</h2>
+            <p className="post-author">{`by ${post.author}`}</p>
+        </div>
         {auth.userIsAdmin ? <button className="delete-post-button" onClick={deletePost}><DeleteIconSVG /></button> : ""}
     </div>);
 }
