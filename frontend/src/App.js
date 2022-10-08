@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home/Home';
 import Navbar from "./components/Navbar/Navbar";
@@ -16,12 +16,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<PersistLogin />}> 
-          <Route path="/" element={<Home />} />
-          <Route path="/posts/:postId" element={<SinglePost />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/shared-blog" element={<Home />} />
+          <Route path="/shared-blog/posts/:postId" element={<SinglePost />} />
+          <Route path="/shared-blog/login" element={<LoginPage />} />
+          <Route path="/shared-blog/register" element={<RegisterPage />} />
           <Route element={<RequireAuth />}>
-            <Route path="/create-post" element={<CreatePostPage />} />
+            <Route path="/shared-blog/create-post" element={<CreatePostPage />} />
           </Route>
         </Route>
       </Routes>

@@ -11,7 +11,7 @@ export default function PostCard ({ post }) {
     const { auth } = useContext(AuthContext);
 
     const handleClick = () => {
-        navigate(`/posts/${post._id}`);
+        navigate(`/shared-blog/posts/${post._id}`);
     }
 
     const deletePost = async (e) => {

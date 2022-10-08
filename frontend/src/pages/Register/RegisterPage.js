@@ -31,7 +31,7 @@ export default function RegisterPage () {
             const data = await RegisterRequest(nameText, emailText, passwordText, confirmPasswordText);
 
             // redirect user to login page if register was successful
-            navigate('/login');
+            navigate('/shared-blog/login');
 
         // if error just display it
         } catch (err) {

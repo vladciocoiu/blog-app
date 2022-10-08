@@ -35,7 +35,7 @@ export default function LoginPage () {
             setAuth(data);
 
             // redirect user to index page 
-            navigate('/');
+            navigate('/shared-blog/');
 
         // if error just display it
         } catch (err) {

@@ -25,7 +25,7 @@ export default function CreatePostPage () {
         } catch (err) {
             console.log(err);
         }
-        navigate('/');
+        navigate('/shared-blog/');
     }
 
     return ( <div className="create-post">

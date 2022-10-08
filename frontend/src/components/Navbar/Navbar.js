@@ -12,7 +12,7 @@ export default function Navbar() {
 
     const handleLogoutClick = () => {
         LogoutRequest(setAuth);
-        navigate('/');
+        navigate('/shared-blog/');
     }
 
     return (
