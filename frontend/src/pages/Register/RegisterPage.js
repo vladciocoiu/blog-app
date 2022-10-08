@@ -50,6 +50,6 @@ export default function RegisterPage () {
             <input className="confirm-password-input" type="password" placeholder="Confirm Password" name="confirm-password" onChange={e => handleInputChange(setConfirmPasswordText, e)} />
             <input className="submit" type="submit" value="Register" />
         </form>
-        <Link className="login-link" to="/login">Already have an account? Log In.</Link>
+        <Link className="login-link" to="/shared-blog/login">Already have an account? Log In.</Link>
     </main>);
 };

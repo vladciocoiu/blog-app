@@ -10,6 +10,6 @@ export default function RequireAuth () {
     return (
         auth?.accessToken
         ? <Outlet />
-        : <Navigate to="/login" />
+        : <Navigate to="/shared-blog/login" />
     );
 };

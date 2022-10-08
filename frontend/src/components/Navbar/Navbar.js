@@ -19,16 +19,16 @@ export default function Navbar() {
         <nav>
             <h3 className="nav-title">Shared Blog</h3>
             <section className="nav-link-section">
-                <Link className="nav-home-link nav-link" to="/"><h4 >Home</h4></Link>
+                <Link className="nav-home-link nav-link" to="/shared-blog/"><h4 >Home</h4></Link>
                 {
                     auth?.accessToken
                     ? <>
-                        <Link className="nav-post-link nav-link" to="/create-post"><h4>Create Post</h4></Link>
+                        <Link className="nav-post-link nav-link" to="/shared-blog/create-post"><h4>Create Post</h4></Link>
                         <button className="logout-button" onClick={handleLogoutClick}><h4>Log Out</h4></button>
                     </>
                     : <>
-                        <Link className="nav-login-link nav-link" to="/login"><h4 >Log In</h4></Link>
-                        <Link className="nav-register-link nav-link" to="/register"><h4 >Register</h4></Link>
+                        <Link className="nav-login-link nav-link" to="/shared-blog/login"><h4 >Log In</h4></Link>
+                        <Link className="nav-register-link nav-link" to="/shared-blog/register"><h4 >Register</h4></Link>
                     </>
                 }
             </section>
