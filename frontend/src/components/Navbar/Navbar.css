@@ -1,6 +1,8 @@
 :root {
   --green: #2BAE66FF;
-  --white: #FCF6F5FF;
+  --white: #FFF;
+  --light-gray: #EEE
+;
 }
 
 nav {
@@ -8,8 +10,9 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 70px;
-  background-color: var(--green);
+  height: 80px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--light-gray);
   z-index: 50;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,6 +20,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20vw;
 }
 
 nav .nav-link-section {
@@ -43,10 +47,10 @@ nav h3 {
 }
 
 .nav-title {
-  color: var(--white);
   text-transform: uppercase;
   font-size: 26px;
   letter-spacing: 1px;
+  color: var(--green);
 }
 
 .nav-title:hover {
@@ -60,19 +64,20 @@ nav h3 {
 }
 
 .nav-link h4, .logout-button h4 {
-  font-size: 20px;
-  color: var(--white);
+  font-size: 18px;
+  color: black;
+  font-weight: normal;
   position: relative;
 }
 
 .nav-link h4:after, .logout-button h4:after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--white);
+  background-color: black;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -93,11 +98,12 @@ nav h3 {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100px;
+    gap: 0;
   }
   nav .nav-title {
     font-size: 22px;
     height: 22px;
-    margin: 14px 0;
+    margin: 28px 0 0 0;
   }
   nav .nav-link-section {
     height: 50px;

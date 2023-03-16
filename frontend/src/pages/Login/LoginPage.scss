@@ -1,13 +1,13 @@
 :root {
     --green: #2BAE66FF; 
-    --white: #FCF6F5FF;
+    --white: #FFF;
 }
 
 .login-main {
     width: 500px;
     display: flex;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 150px;
     flex-direction: column;
     align-items: center;
     h2 {

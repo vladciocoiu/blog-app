@@ -1,7 +1,7 @@
 :root {
     --green: #2BAE66FF; 
     --light-green: rgba(88, 162, 121, 0.962);
-    --white: #FCF6F5FF;
+    --white: #FFF;
 }
 
 .single-post {
@@ -16,9 +16,11 @@
     flex-direction: column;
     padding-top: 100px;
     .post-details {
-        display: flex;
-        gap: 5px;
+        display: grid;
+        grid-template-areas: "a a"
+        "d t";
         text-align: center;
+        gap: 0px 10px;
         justify-content: center;
     }
     .post-time, .post-date, .post-author {
@@ -26,12 +28,13 @@
         font-size: 16px;
     }
     .post-author {
-        margin-right: 15px;
+        grid-area: a;
+        margin-bottom: 0;
     }
     .post-title {
         font-size: 32px;
         text-align: center;
-        margin-bottom: 10px;;
+        margin-bottom: 10px;
     }
     .post-text {
         white-space: pre-line;
@@ -56,8 +59,8 @@
             bottom: -7px;
             left: -10px;
             content: "";
-            background-color: rgb(220, 220, 220);
-            height: 2px;
+            background-color: #ccc;
+            height: 1px;
             width: calc(100% + 20px);
         }
         .post-comments {
@@ -75,8 +78,8 @@
                 grid-template-columns: fit-content(100%);
                 border-bottom-left-radius: 10px;
                 margin: 0;
-                border-left: 2px solid rgb(220, 220, 220);
-                border-bottom: 2px solid rgb(220, 220, 220);
+                border-left: 1px solid #eee;
+                border-bottom: 1px solid #eee;
 
                 position: relative;
                 .comment-author {
@@ -130,7 +133,7 @@
     border: none;
     background-color: var(--white);
     padding: 10px;
-    border: 1px solid gray;
+    border: 1px solid #aaa;
     height: 38px;
     width: 500px;
     resize: none;
@@ -144,8 +147,8 @@
     padding: 10px 20px;
     background: none;
     transition: 0.2s ease-in-out;
-    color: rgb(100, 100, 100);
-    border: 1px solid rgb(100, 100, 100);
+    color: #555;
+    border: 1px solid #aaa;
     border-radius: 7px;
     font-weight: bold;
 }
@@ -284,24 +287,6 @@
     }
     .single-post .add-comment-form {
         padding: 50px;
-    }
-   .single-post .post-details {
-        display: grid;
-        grid-template-areas: "a a"
-        "d t";
-        grid-gap: 10px 0;
-        .post-author {
-            grid-area: a;
-            margin: 0;
-        }
-        .post-date {
-            grid-area: d;
-            margin: 0;
-        }
-        .post-time {
-            grid-area: t;
-            margin: 0;
-        }
     }
 
 }

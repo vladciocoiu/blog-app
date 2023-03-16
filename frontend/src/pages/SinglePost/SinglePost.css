@@ -1,7 +1,7 @@
 :root {
   --green: #2BAE66FF;
   --light-green: rgba(88, 162, 121, 0.962);
-  --white: #FCF6F5FF;
+  --white: #FFF;
 }
 
 .single-post {
@@ -23,11 +23,11 @@
 }
 
 .single-post .post-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "a a" "d t";
   text-align: center;
+  gap: 0px 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -39,7 +39,10 @@
 }
 
 .single-post .post-author {
-  margin-right: 15px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+  margin-bottom: 0;
 }
 
 .single-post .post-title {
@@ -77,8 +80,8 @@
   bottom: -7px;
   left: -10px;
   content: "";
-  background-color: gainsboro;
-  height: 2px;
+  background-color: #ccc;
+  height: 1px;
   width: calc(100% + 20px);
 }
 
@@ -107,8 +110,8 @@
       grid-template-columns: fit-content(100%);
   border-bottom-left-radius: 10px;
   margin: 0;
-  border-left: 2px solid gainsboro;
-  border-bottom: 2px solid gainsboro;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   position: relative;
 }
 
@@ -173,7 +176,7 @@
   border: none;
   background-color: var(--white);
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid #aaa;
   height: 38px;
   width: 500px;
   resize: none;
@@ -188,8 +191,8 @@
   background: none;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  color: #646464;
-  border: 1px solid #646464;
+  color: #555;
+  border: 1px solid #aaa;
   border-radius: 7px;
   font-weight: bold;
 }
@@ -333,31 +336,6 @@
   }
   .single-post .add-comment-form {
     padding: 50px;
-  }
-  .single-post .post-details {
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: "a a" "d t";
-    grid-gap: 10px 0;
-  }
-  .single-post .post-details .post-author {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: a;
-    margin: 0;
-  }
-  .single-post .post-details .post-date {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: d;
-    margin: 0;
-  }
-  .single-post .post-details .post-time {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: t;
-    margin: 0;
   }
 }
 /*# sourceMappingURL=SinglePost.css.map */

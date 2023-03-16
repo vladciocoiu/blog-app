@@ -1,6 +1,6 @@
 :root {
   --green: #2BAE66FF;
-  --white: #FCF6F5FF;
+  --white: #FFF;
 }
 
 .login-main {
@@ -9,7 +9,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 150px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
