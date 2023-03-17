@@ -16,29 +16,14 @@
   border-radius: 50%;
   border: 6px solid #999;
   border-color: #999 transparent #999 transparent;
-  -webkit-animation: loading-spinner 1.2s linear infinite;
-          animation: loading-spinner 1.2s linear infinite;
-}
-
-@-webkit-keyframes loading-spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+  animation: loading-spinner 1.2s linear infinite;
 }
 
 @keyframes loading-spinner {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-}
-/*# sourceMappingURL=LoadingSpinner.css.map */
+}/*# sourceMappingURL=LoadingSpinner.css.map */

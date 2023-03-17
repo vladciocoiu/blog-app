@@ -1,8 +1,7 @@
 :root {
   --green: #2BAE66FF;
   --white: #FFF;
-  --light-gray: #EEE
-;
+  --light-gray: #EEE ;
 }
 
 nav {
@@ -14,35 +13,19 @@ nav {
   background-color: var(--white);
   border-bottom: 1px solid var(--light-gray);
   z-index: 50;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 20vw;
 }
-
 nav .nav-link-section {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
 }
-
 nav h3 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
 }
 
@@ -62,14 +45,12 @@ nav h3 {
   border: none;
   background: transparent;
 }
-
 .nav-link h4, .logout-button h4 {
   font-size: 18px;
   color: black;
   font-weight: normal;
   position: relative;
 }
-
 .nav-link h4:after, .logout-button h4:after {
   content: "";
   position: absolute;
@@ -78,10 +59,8 @@ nav h3 {
   width: 0;
   height: 2px;
   background-color: black;
-  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-
 .nav-link h4:hover:after, .logout-button h4:hover:after {
   width: 100%;
   left: 0;
@@ -93,10 +72,7 @@ nav h3 {
 
 @media screen and (max-width: 1050px) {
   nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: 100px;
     gap: 0;
   }
@@ -111,5 +87,4 @@ nav h3 {
   nav .nav-link-section h4 {
     font-size: 18px;
   }
-}
-/*# sourceMappingURL=Navbar.css.map */
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,6 +1,6 @@
 :root {
     --green: #2BAE66FF; 
-    --white: #FFF;
+    --white: #fff;
 }
 
 .login-main {
@@ -11,7 +11,8 @@
     flex-direction: column;
     align-items: center;
     h2 {
-        font-size: 28px;
+        font-size: 32px;
+        font-weight: 900;
     }
     p {
         color: red;
@@ -22,15 +23,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
     .email-input, .password-input {
-        font-size: 16px;
+        font-size: 14px;
         border-radius: 5px;
         margin: 2px;
         border: none;
         background-color: var(--white);
-        padding: 10px;
-        border: 1px solid gray;
+        padding: 10px 20px;
+        border: 1px solid #aaa;
+        color: #222;
+        width: 300px;
+    }
+    .email-input:focus, .password-input:focus {
+        outline: none;
+        border-color: var(--green);
     }
 
     .submit {
@@ -38,10 +46,12 @@
         padding: 10px 30px;
         margin: 20px 0;
         background-color: var(--green);
-        border: 1px solid black;
+        border: none;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
         color: white;
         font-weight: bold;
         border-radius: 7px;
+        width: 100%;
     }
     .submit:hover {
         cursor: pointer;
@@ -50,12 +60,20 @@
         text-decoration: none;
         font-size: 17px;
         margin-top: 10px;
+        color: #888;
     }
 }
 
 @media screen and (max-width: 600px) {
     .login-main {
-        width: 70vw;
+        width: 80vw;
+        form {
+            width: 80vw;
+        }
+        .name-input, .email-input, .password-input, .confirm-password-input {
+            box-sizing: border-box;
+            width: 80vw;
+        }
         h2 {
             font-size: 24px;
         }

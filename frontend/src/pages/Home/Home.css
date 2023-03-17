@@ -6,14 +6,9 @@
 .posts-container {
   width: 1320px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
   padding-top: 40px;
   padding-bottom: 20px;
@@ -21,59 +16,35 @@
 
 .post-card {
   border-radius: 3px;
-  -webkit-box-shadow: 2px 2px 10px -1px #17252abf;
-          box-shadow: 2px 2px 10px -1px #17252abf;
-  -webkit-transition: 0.2s ease-out;
+  box-shadow: 2px 2px 10px -1px rgba(23, 37, 42, 0.7490196078);
   transition: 0.2s ease-out;
   width: 300px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .post-card .post-author-details-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   margin: 0 40px;
 }
-
 .post-card .post-title, .post-card .post-author {
   margin: 10px 0;
 }
-
 .post-card .post-title {
   text-align: center;
   margin-top: 40px;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   font-size: 24px;
 }
-
 .post-card .post-author {
   font-size: 16px;
   margin-bottom: 40px;
 }
-
 .post-card .home-post-img {
   width: 100%;
 }
@@ -91,16 +62,9 @@
   width: 16px;
   height: 16px;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: 0.15s ease-in-out;
+  align-items: center;
+  justify-content: center;
   transition: 0.15s ease-in-out;
 }
 
@@ -114,7 +78,6 @@
     width: 1000px;
   }
 }
-
 @media screen and (max-width: 1200px) {
   .posts-container {
     width: 600px;
@@ -130,7 +93,6 @@
     font-size: 21px;
   }
 }
-
 @media screen and (max-width: 650px) {
   .posts-container {
     width: 60vw;
@@ -138,5 +100,4 @@
   .post-card {
     width: 60vw;
   }
-}
-/*# sourceMappingURL=Home.css.map */
+}/*# sourceMappingURL=Home.css.map */

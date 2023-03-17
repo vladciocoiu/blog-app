@@ -51,8 +51,8 @@ export default function LoginPage () {
         <form onSubmit={handleSubmit}>
             <input className="email-input" type="email" placeholder="Email" name="email" onChange={e => handleInputChange(setEmailText, e)} />
             <input className="password-input" type="password" placeholder="Password" name="password" onChange={e => handleInputChange(setPasswordText, e)} />
-            <input className="submit" type="submit" value="Log In" />
+            <input className="submit" type="submit" value="Connect" />
         </form>
-        <Link className="register-link" to="/register">{'Don\'t have an account? Register.'}</Link>
+        <Link className="register-link" to="/shared-blog/register">{'Don\'t have an account?'}</Link>
     </main>);
 };

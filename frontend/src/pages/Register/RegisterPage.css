@@ -5,77 +5,74 @@
 
 .register-main {
   width: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: auto;
   margin-top: 150px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .register-main h2 {
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 900;
 }
-
 .register-main p {
   color: red;
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
 }
-
 .register-main form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-
 .register-main .name-input, .register-main .email-input, .register-main .password-input, .register-main .confirm-password-input {
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   margin: 2px;
   border: none;
   background-color: var(--white);
-  padding: 10px;
-  border: 1px solid gray;
+  padding: 10px 20px;
+  border: 1px solid #aaa;
+  color: #222;
+  width: 300px;
 }
-
+.register-main .name-input:focus, .register-main .email-input:focus, .register-main .confirm-password-input:focus, .register-main .password-input:focus {
+  outline: none;
+  border-color: var(--green);
+}
 .register-main .submit {
   font-size: 18px;
   padding: 10px 30px;
   margin: 20px 0;
   background-color: var(--green);
-  border: 1px solid black;
+  border: none;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: bold;
   border-radius: 7px;
+  width: 100%;
 }
-
 .register-main .submit:hover {
   cursor: pointer;
 }
-
 .register-main .login-link {
   text-decoration: none;
   font-size: 17px;
   margin-top: 10px;
+  color: #888;
 }
 
 @media screen and (max-width: 600px) {
   .register-main {
-    width: 70vw;
+    width: 80vw;
+  }
+  .register-main form {
+    width: 80vw;
+  }
+  .register-main .name-input, .register-main .email-input, .register-main .password-input, .register-main .confirm-password-input {
+    box-sizing: border-box;
+    width: 80vw;
   }
   .register-main h2 {
     font-size: 24px;
@@ -83,5 +80,4 @@
   .register-main .name-input, .register-main .email-input, .register-main .password-input, .register-main .confirm-password-input, .register-main .login-link {
     font-size: 14px;
   }
-}
-/*# sourceMappingURL=RegisterPage.css.map */
+}/*# sourceMappingURL=RegisterPage.css.map */

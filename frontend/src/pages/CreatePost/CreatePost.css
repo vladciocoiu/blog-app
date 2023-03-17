@@ -1,39 +1,23 @@
 .create-post {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: 10vh;
   width: 100vw;
   height: calc(100vh - 100px);
   margin-top: 100px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .create-post h2 {
   margin-bottom: 50px;
 }
 
 .create-post-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 10px;
   width: 400px;
 }
-
 .create-post-form input, .create-post-form textarea {
   font-size: 16px;
   border-radius: 5px;
@@ -43,34 +27,29 @@
   padding: 10px;
   border: 1px solid gray;
 }
-
 .create-post-form .submit-button {
   margin: auto;
   font-size: 16px;
   padding: 10px 20px;
   background: none;
-  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  color: #646464;
-  border: 1px solid #646464;
+  color: rgb(100, 100, 100);
+  border: 1px solid rgb(100, 100, 100);
   border-radius: 10px;
   font-weight: bold;
   margin-top: 20px;
 }
-
 .create-post-form .submit-button:hover {
   background-color: var(--green);
   cursor: pointer;
   color: var(--white);
 }
-
 .create-post-form .text-input {
   max-height: 400px;
   height: 20vh;
   resize: none;
   font-family: inherit;
 }
-
 .create-post-form .title-input {
   width: 150px;
 }
@@ -83,5 +62,4 @@
   .create-post-form .title-input {
     width: auto;
   }
-}
-/*# sourceMappingURL=CreatePost.css.map */
+}/*# sourceMappingURL=CreatePost.css.map */

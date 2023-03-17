@@ -7,50 +7,35 @@
 .single-post {
   width: 800px;
   left: calc((100vw - 800px) / 2);
-  min-height: calc(100vh);
+  min-height: 100vh;
   position: absolute;
   z-index: -1;
   top: 0;
   background-color: var(--white);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-top: 100px;
 }
-
 .single-post .post-details {
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: "a a" "d t";
+  grid-template-areas: "a a" "d t";
   text-align: center;
   gap: 0px 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .single-post .post-time, .single-post .post-date, .single-post .post-author {
-  color: #646464;
+  color: rgb(100, 100, 100);
   font-size: 16px;
 }
-
 .single-post .post-author {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: a;
   margin-bottom: 0;
 }
-
 .single-post .post-title {
   font-size: 32px;
   text-align: center;
   margin-bottom: 10px;
 }
-
 .single-post .post-text {
   white-space: pre-line;
   font-size: 17px;
@@ -58,23 +43,19 @@
   margin-top: 100px;
   line-height: 26px;
 }
-
 .single-post .comment-section {
   margin: 100px 0;
   width: 100%;
 }
-
 .single-post .comment-section .comment-heading {
   margin: 0;
   margin-bottom: 20px;
   font-size: 17px;
   font-weight: 600;
   position: relative;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-
 .single-post .comment-section .comment-heading:after {
   position: absolute;
   bottom: -7px;
@@ -84,60 +65,39 @@
   height: 1px;
   width: calc(100% + 20px);
 }
-
 .single-post .comment-section .post-comments {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 20px;
 }
-
 .single-post .comment-section .post-comments .comment {
   position: relative;
   padding: 20px 40px;
   padding-right: 56px;
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: "a d ." "t t t";
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: fit-content(100%);
-      grid-template-columns: fit-content(100%);
+  grid-template-areas: "a d ." "t t t";
+  align-items: center;
+  grid-template-columns: fit-content(100%);
   border-bottom-left-radius: 10px;
   margin: 0;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
   position: relative;
 }
-
 .single-post .comment-section .post-comments .comment .comment-author {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: a;
   font-size: 18px;
   margin: 0;
   font-weight: bold;
 }
-
 .single-post .comment-section .post-comments .comment .comment-date {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: d;
-  color: #646464;
+  color: rgb(100, 100, 100);
   font-size: 14px;
   margin: 0;
   margin-left: 10px;
 }
-
 .single-post .comment-section .post-comments .comment .comment-text {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: t;
   font-size: 16px;
   margin: 0;
@@ -158,16 +118,12 @@
 }
 
 .add-comment-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   height: 60px;
   padding: 0 30px;
   margin-top: 70px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .add-comment {
@@ -189,7 +145,6 @@
   font-size: 16px;
   padding: 10px 20px;
   background: none;
-  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   color: #555;
   border: 1px solid #aaa;
@@ -212,16 +167,9 @@
   width: 16px;
   height: 16px;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: 0.15s ease-in-out;
+  align-items: center;
+  justify-content: center;
   transition: 0.15s ease-in-out;
 }
 
@@ -259,18 +207,16 @@
     font-size: 15px;
   }
 }
-
 @media screen and (max-width: 1000px) {
   .single-post {
     width: 600px;
     left: calc((100vw - 600px) / 2);
   }
 }
-
 @media screen and (max-width: 750px) {
   .single-post {
     width: 80vw;
-    left: calc((100vw - 80vw) / 2);
+    left: 10vw;
   }
   .single-post .post-title {
     font-size: 26px;
@@ -307,20 +253,12 @@
     font-size: 13px;
   }
   .single-post .add-comment-form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 100px;
   }
 }
-
 @media screen and (max-width: 500px) {
   .single-post .comment-section .post-comments .comment {
     padding: 15px 20px;
@@ -337,5 +275,4 @@
   .single-post .add-comment-form {
     padding: 50px;
   }
-}
-/*# sourceMappingURL=SinglePost.css.map */
+}/*# sourceMappingURL=SinglePost.css.map */
