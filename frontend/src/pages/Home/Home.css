@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 
@@ -91,6 +91,11 @@
   }
   .post-card .post-title {
     font-size: 21px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .posts-container {
+    padding-top: 80px;
   }
 }
 @media screen and (max-width: 650px) {
