@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
 import useRefreshToken from "../hooks/useRefreshToken";
 import AuthContext from "../context/AuthProvider";
-import LoadingSpinner from "./LoadingSpinner/LoadingSpinner.js";
+import LoadingCard from "./LoadingCard/LoadingCard.js";
 
 // wrapper component for persistent login
 // calls the refresh hook after a reload, so that as long as the refreshToken cookie is present, the user will remain authenticated
@@ -27,7 +27,7 @@ export default function PersistLogin () {
 
     return (<>
     {isLoading
-    ? <LoadingSpinner />
+    ? <LoadingCard />
     :  <Outlet />}
     </>);
 };
