@@ -68,6 +68,13 @@
     animation-delay: 0.9s;
 }
 
+@media screen and (min-width: 1500px) {
+    .loading-post-img {
+        width: 400px;
+        height: calc(400px * 9 / 16);
+    }
+}
+
 @media screen and (max-width: 1500px) {
     .loading-posts-container {
         width: 1000px;

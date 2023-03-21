@@ -67,6 +67,12 @@
   animation-delay: 0.9s;
 }
 
+@media screen and (min-width: 1500px) {
+  .loading-post-img {
+    width: 400px;
+    height: 225px;
+  }
+}
 @media screen and (max-width: 1500px) {
   .loading-posts-container {
     width: 1000px;
