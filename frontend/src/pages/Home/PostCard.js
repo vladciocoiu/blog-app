@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
@@ -6,6 +6,8 @@ import AuthContext from '../../context/AuthProvider';
 import { ReactComponent as DeleteIconSVG } from "../../assets/delete-icon.svg";
 
 export default function PostCard ({ post }) {
+    const [imgLoaded, setImgLoaded] = useState(false);
+
     const navigate = useNavigate();
     const axiosPrivate = useAxiosPrivate();
     const { auth } = useContext(AuthContext);
@@ -33,7 +35,12 @@ export default function PostCard ({ post }) {
     }
 
     return (<div onClick={handleClick} className="post-card">
-        <img className="home-post-img" src={process.env.REACT_APP_SERVER_URL + post.imagePath} />
+        <img 
+            className="home-post-img" 
+            src={process.env.REACT_APP_SERVER_URL + post.imagePath} 
+            onLoad={() => setImgLoaded(true)}
+            style={(imgLoaded ? {} : { display : 'none' })} />
+        {imgLoaded ? <></> : <div className="img-placeholder"></div>}
         <div className="post-author-details-wrapper">
             <h2 className="post-title">{post.title}</h2>
             <p className="post-author">{`by ${post.author}`}</p>
